@@ -1,4 +1,4 @@
-/* Waldek zmiana1
+/*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,29 +12,17 @@
  * limitations under the License.
  */
 
-/**
- * Write your model definitions here
- */
+'use strict';
 
-namespace org.callforcode.biznet
+const composerSteps = require('composer-cucumber-steps');
+const cucumber = require('cucumber');
 
-participant Party identified by partyId {
-  o String partyId
-  o String name
-  o String isIssuer
-  o String isSurvivor
+module.exports = function () {
+    composerSteps.call(this);
+};
+
+if (cucumber.defineSupportCode) {
+    cucumber.defineSupportCode((context) => {
+        module.exports.call(context);
+    });
 }
-
-asset NFCAsset identified by nfcId {
-  o String nfcId
-  o String text
-  --> Party currentOwner
-}
-
-transaction AssignTransaction {
-  o String assignTransactionId
-  --> NFCAsset nfcId
-  --> Party newOwner
-  
-}
-

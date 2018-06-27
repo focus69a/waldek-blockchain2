@@ -1,4 +1,4 @@
-/* Waldek zmiana1
+/*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,23 +18,25 @@
 
 namespace org.callforcode.biznet
 
-participant Party identified by partyId {
-  o String partyId
-  o String name
-  o String isIssuer
-  o String isSurvivor
+participant SampleParticipant identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
 }
 
-asset NFCAsset identified by nfcId {
-  o String nfcId
-  o String text
-  --> Party currentOwner
+asset SampleAsset identified by assetId {
+  o String assetId
+  --> SampleParticipant owner
+  o String value
 }
 
-transaction AssignTransaction {
-  o String assignTransactionId
-  --> NFCAsset nfcId
-  --> Party newOwner
-  
+transaction SampleTransaction {
+  --> SampleAsset asset
+  o String newValue
 }
 
+event SampleEvent {
+  --> SampleAsset asset
+  o String oldValue
+  o String newValue
+}
