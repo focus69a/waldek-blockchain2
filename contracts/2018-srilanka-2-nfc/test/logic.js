@@ -157,8 +157,9 @@ describe('#' + namespace, () => {
         await importCardForIdentity(aliceCardName, identity);
         identity = await businessNetworkConnection.issueIdentity(participantNS + '#bob@email.com', 'bob1');
         await importCardForIdentity(bobCardName, identity);
-    });
-1*/
+1*/   
+   });
+
     /**
      * Reconnect using a different identity.
      * @param {String} cardName The name of the card for the identity to use
@@ -457,6 +458,6 @@ describe('#' + namespace, () => {
         transaction.newValue = '60';
         businessNetworkConnection.submitTransaction(transaction).should.be.rejectedWith(/does not have .* access to resource/);
     });
-
-});
 2*/
+});
+
