@@ -156,7 +156,8 @@ describe('#' + namespace, () => {
         let identity = await businessNetworkConnection.issueIdentity(participantNS + '#alice@email.com', 'alice1');
         await importCardForIdentity(aliceCardName, identity);
         identity = await businessNetworkConnection.issueIdentity(participantNS + '#bob@email.com', 'bob1');
-        await importCardForIdentity(bobCardName, identity); */   
+        await importCardForIdentity(bobCardName, identity); 
+        */
     });
 
     /**
