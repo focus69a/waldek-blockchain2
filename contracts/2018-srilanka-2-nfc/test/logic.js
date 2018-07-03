@@ -129,20 +129,21 @@ describe('#' + namespace, () => {
 
         const participantRegistry = await businessNetworkConnection.getParticipantRegistry(participantNS);
         // Create the participants.
-        const alice = factory.newResource(namespace, participantType, 'alice@email.com');
-        alice.firstName = 'Alice';
-        alice.lastName = 'A';
+        const RedCross = factory.newResource(namespace, participantType, 'RedCross');
+        alice.partyId = 'RedCross';
+        alice.name = 'RedCross';
 
-        const bob = factory.newResource(namespace, participantType, 'bob@email.com');
-        bob.firstName = 'Bob';
-        bob.lastName = 'B';
+        const Surviver1 = factory.newResource(namespace, participantType, 'Surviver1');
+        bob.partyId = 'Surviver1';
+        bob.name = 'Abdul';
 
-        participantRegistry.addAll([alice, bob]);
+        participantRegistry.addAll([RedCross, Surviver1]);
 
+        /*1
         const assetRegistry = await businessNetworkConnection.getAssetRegistry(assetNS);
         // Create the assets.
         const asset1 = factory.newResource(namespace, assetType, '1');
-        asset1.owner = factory.newRelationship(namespace, participantType, 'alice@email.com');
+        asset1.owner = factory.newRelationship(namespace, participantType, 'RedCross');
         asset1.value = '10';
 
         const asset2 = factory.newResource(namespace, assetType, '2');
@@ -157,12 +158,12 @@ describe('#' + namespace, () => {
         identity = await businessNetworkConnection.issueIdentity(participantNS + '#bob@email.com', 'bob1');
         await importCardForIdentity(bobCardName, identity);
     });
-
+1*/
     /**
      * Reconnect using a different identity.
      * @param {String} cardName The name of the card for the identity to use
      */
-    async function useIdentity(cardName) {
+/*2    async function useIdentity(cardName) {
         await businessNetworkConnection.disconnect();
         businessNetworkConnection = new BusinessNetworkConnection({ cardStore: cardStore });
         events = [];
@@ -456,5 +457,5 @@ describe('#' + namespace, () => {
         transaction.newValue = '60';
         businessNetworkConnection.submitTransaction(transaction).should.be.rejectedWith(/does not have .* access to resource/);
     });
-
+2*/
 });
