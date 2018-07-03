@@ -55,8 +55,8 @@ describe('#' + namespace, () => {
     let factory;
 
     // These are the identities for Alice and Bob.
-    const aliceCardName = 'alice';
-    const bobCardName = 'bob';
+    const aliceCardName = 'RedCross';
+    const bobCardName = 'Surviver1';
 
     // These are a list of receieved events.
     let events;
