@@ -19,7 +19,7 @@
 
 /**
  * Sample transaction
- * @param {org.test.test1.SampleTransaction} sampleTransaction
+ * @param {org.callforcode.biznet.AssignTransaction} AssignTransaction
  * @transaction
  */
 async function transferNFCTag(tx) {
