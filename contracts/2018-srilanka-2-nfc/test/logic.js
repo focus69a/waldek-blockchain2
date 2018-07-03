@@ -457,5 +457,6 @@ describe('#' + namespace, () => {
         transaction.newValue = '60';
         businessNetworkConnection.submitTransaction(transaction).should.be.rejectedWith(/does not have .* access to resource/);
     });
-2*/
+
 });
+2*/
