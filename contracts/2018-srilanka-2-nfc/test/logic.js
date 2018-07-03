@@ -130,12 +130,12 @@ describe('#' + namespace, () => {
         const participantRegistry = await businessNetworkConnection.getParticipantRegistry(participantNS);
         // Create the participants.
         const RedCross = factory.newResource(namespace, participantType, 'RedCross');
-        alice.partyId = 'RedCross';
-        alice.name = 'RedCross';
+        RedCross.partyId = 'RedCross';
+        RedCross.name = 'RedCross';
 
         const Surviver1 = factory.newResource(namespace, participantType, 'Surviver1');
-        bob.partyId = 'Surviver1';
-        bob.name = 'Abdul';
+        Surviver1.partyId = 'Surviver1';
+        Surviver1.name = 'Abdul';
 
         participantRegistry.addAll([RedCross, Surviver1]);
 
@@ -157,8 +157,8 @@ describe('#' + namespace, () => {
         await importCardForIdentity(aliceCardName, identity);
         identity = await businessNetworkConnection.issueIdentity(participantNS + '#bob@email.com', 'bob1');
         await importCardForIdentity(bobCardName, identity);
-1*/   
-   });
+    */   
+    });
 
     /**
      * Reconnect using a different identity.
